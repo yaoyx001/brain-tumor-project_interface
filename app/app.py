@@ -17,15 +17,16 @@ def analyze_mri(mri_file):
     response = requests.post(api_url, data=mri_file)
 
     # Parse the API response and extract the analysis results
-    # result = response.json()
-    # tumor_risk = result['tumor_risk']
+    result = response.json()
+    tumor_risk = result['predictions']
 
     # Display the analysis results
-    output.text(response)
+    output.text(tumor_risk)
 def hello():
     api_url = 'https://small-bars-grow-35-205-4-11.loca.lt/hello'
     response = requests.get(api_url, data=mri_file)
-    output.text(response)
+    result = response.json()
+    output.text(result)
 
 #Handle the user input
 if mri_file is not None:
