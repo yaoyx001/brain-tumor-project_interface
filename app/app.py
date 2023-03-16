@@ -22,6 +22,10 @@ def analyze_mri(mri_file):
 
     # Display the analysis results
     output.text(response)
+def hello():
+    api_url = 'https://small-bars-grow-35-205-4-11.loca.lt/hello'
+    response = requests.post(api_url, data=mri_file)
+    output.text(response)
 
 #Handle the user input
 if mri_file is not None:
