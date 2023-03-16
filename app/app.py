@@ -19,7 +19,6 @@ def analyze_mri(mri_file):
     # Parse the API response and extract the analysis results
     result = response.json()
     tumor_risk = result['predictions']
-
     # Display the analysis results
     output.text(tumor_risk)
 def hello():
