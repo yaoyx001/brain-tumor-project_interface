@@ -14,7 +14,7 @@ output = st.empty()
 def analyze_mri(mri_file):
     # Send the MRI data to the API
 
-    api_url = 'https://social-llamas-double-35-205-4-11.loca.lt/predict'
+    api_url = 'https://tangy-clocks-yawn-35-205-4-11.loca.lt/predict'
     files = {"file": mri_file.getbuffer()}
     response = requests.post(api_url, files=files)#data=mri_file)
 
