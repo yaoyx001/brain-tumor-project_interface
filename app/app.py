@@ -25,7 +25,8 @@ def analyze_mri(mri_file):
     tumor_risk = result['predictions']
     #tumor_risk = 'the tumor is a high-grade glioma'
     # Display the analysis results
-    output.text(tumor_risk)
+    #output.text(tumor_risk)
+    return tumor_risk
 
 #Handle the user input
 
@@ -35,5 +36,7 @@ if mri_file:
         time.sleep(5)
     st.info('Image is uploded, waiting for the prediction', icon="ℹ️")
     # Analyze the MRI data and display the results
-    analyze_mri(mri_file)
-    st.success('Done!')
+    #prediction ='good'
+    prediction = analyze_mri(mri_file)
+    st.success('Prediction is done', icon="ℹ️")
+    st.subheader(prediction)
