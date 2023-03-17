@@ -31,7 +31,7 @@ def analyze_mri(mri_file):
 
 if mri_file:
     # Load the MRI data from the uploaded file
-    with st.spinner('Uuploading'):
+    with st.spinner('Uploading'):
         time.sleep(5)
     st.info('Image is uploded, waiting for the predict', icon="ℹ️")
     # Analyze the MRI data and display the results
