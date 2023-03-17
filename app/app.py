@@ -13,7 +13,8 @@ output = st.empty()
 #Create a function that analyzes the uploaded MRI image using an API and displays the results:
 def analyze_mri(mri_file):
     # Send the MRI data to the API
-    files = {'upload_file': mri_file}
+    file = mri_file.getbuffer()
+    files = {'upload_file': file}
     api_url = 'https://khaki-singers-battle-35-205-4-11.loca.lt/predict'
     response = requests.post(api_url, files=files)#data=mri_file)
 
