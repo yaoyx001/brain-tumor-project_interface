@@ -21,10 +21,10 @@ def analyze_mri(mri_file):
     # Parse the API response and extract the analysis results
     #breakpoint()
     result = response.json()
-    tumor_risk = result['predictions']
+    #tumor_risk = result['predictions']
     #tumor_risk = 'the tumor is a high-grade glioma'
     # Display the analysis results
-    output.text(tumor_risk.capitalize() + '!')
+    output.text(result)
 
 #Handle the user input
 if mri_file:
