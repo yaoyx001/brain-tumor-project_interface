@@ -18,9 +18,9 @@ def analyze_mri(mri_file):
 
     # Parse the API response and extract the analysis results
     result = response.json()
-    tumor_risk = result['predictions']
+    #tumor_risk = result['predictions']
     # Display the analysis results
-    output.text(tumor_risk)
+    output.text(result)#tumor_risk)
 def hello():
     api_url = 'https://khaki-singers-battle-35-205-4-11.loca.lt/hello'
     response = requests.get(api_url, data=mri_file)
