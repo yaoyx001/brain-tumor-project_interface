@@ -2,11 +2,12 @@ import streamlit as st
 import numpy as np
 import nibabel as nib
 import requests
+import time
 #create a Streamlit app instance:
-st.set_page_config(page_title='MRI Analyzer', page_icon=':brain:', layout='wide')
-st.title('MRI Analyzer')
+st.set_page_config(page_title='Brain Tumor Analyzer', page_icon=':brain:', layout='wide')
+st.title('Brain Tumor Analyzer')
 
-mri_file = st.file_uploader('Upload an MRI image (NIfTI format)', type=['nii'])
+mri_file = st.file_uploader('Upload an MRI T1 image (NIfTI format)', type=['nii'])
 
 output = st.empty()
 
@@ -27,11 +28,12 @@ def analyze_mri(mri_file):
     output.text(tumor_risk)
 
 #Handle the user input
+
 if mri_file:
     # Load the MRI data from the uploaded file
-    
-
+    with st.spinner('Uuploading'):
+        time.sleep(5)
+    st.info('Image is uploded, waiting for the predict', icon="ℹ️")
     # Analyze the MRI data and display the results
     analyze_mri(mri_file)
- 
-    #output.text('The tumor is high risk')
+    st.success('Done!')
