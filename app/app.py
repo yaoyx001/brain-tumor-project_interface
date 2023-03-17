@@ -13,24 +13,21 @@ output = st.empty()
 #Create a function that analyzes the uploaded MRI image using an API and displays the results:
 def analyze_mri(mri_file):
     # Send the MRI data to the API
-    file = mri_file.getbuffer()
-    files = {'upload_file': file}
-    api_url = 'https://khaki-singers-battle-35-205-4-11.loca.lt/predict'
+
+    api_url = 'http://127.0.0.1:8124/predict'
+    files = {"file": mri_file.getbuffer()}
     response = requests.post(api_url, files=files)#data=mri_file)
 
     # Parse the API response and extract the analysis results
+    #breakpoint()
     result = response.json()
-    #tumor_risk = result['predictions']
+    tumor_risk = result['predictions']
+    #tumor_risk = 'the tumor is a high-grade glioma'
     # Display the analysis results
-    output.text(result)#tumor_risk)
-def hello():
-    api_url = 'https://khaki-singers-battle-35-205-4-11.loca.lt/hello'
-    response = requests.get(api_url, data=mri_file)
-    result = response.json()
-    output.text(result)
+    output.text(tumor_risk.capitalize() + '!')
 
 #Handle the user input
-if mri_file is not None:
+if mri_file:
     # Load the MRI data from the uploaded file
     
 
