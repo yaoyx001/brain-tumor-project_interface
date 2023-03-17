@@ -34,5 +34,5 @@ if mri_file is not None:
 
     # Analyze the MRI data and display the results
     analyze_mri(mri_file)
-    hello()
+ 
     #output.text('The tumor is high risk')
